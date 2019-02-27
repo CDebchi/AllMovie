@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from './../../film.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -8,7 +8,7 @@ import { FilmService } from './../../film.service';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor(private ApiFilm : FilmService) { }
+  constructor(private ApiFilm : FilmService, private root : Router) { }
   
   Imgpath1 : any;
   Imgpath2 : any;
@@ -20,6 +20,10 @@ export class CarouselComponent implements OnInit {
   Imgpath8 : any;
   Imgpath9 : any;
 
+  hezni(Title){
+    localStorage.setItem('film', Title)
+    this.root.navigateByUrl('dashbord/home')
+  }
   ngOnInit() {   
       
       this.ApiFilm.getFilm('What Men Want').subscribe((abc : any) => {

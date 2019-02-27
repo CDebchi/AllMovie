@@ -10,6 +10,7 @@ import { LoginnComponent } from './accueil/loginn/loginn.component';
 import { RegisterComponent } from './accueil/register/register.component';
 import { FooterComponent } from './accueil/footer/footer.component';
 import { FilmService } from './film.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
@@ -19,6 +20,16 @@ import { FormsModule } from '@angular/forms';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { NavComponent } from './dashbord/nav/nav.component';
 import { ProfilComponent } from './dashbord/profil/profil.component';
+import { MapComponent } from './dashbord/map/map.component';
+import { GetAllService } from './get-all.service';
+import { HomeComponent } from './dashbord/home/home.component';
+import { UpdateProfilComponent } from './dashbord/update-profil/update-profil.component';
+import { CinemaComponent } from './dashbord/cinema/cinema.component';
+import { FtrComponent } from './dashbord/ftr/ftr.component';
+import { AdminComponent } from './admin/admin.component';
+import { HomeadminComponent } from './admin/homeadmin/homeadmin.component';
+import { LoginadinComponent } from './admin/loginadin/loginadin.component';
+import { WeatherComponent } from './dashbord/weather/weather.component';
 
 
 @NgModule({
@@ -33,6 +44,15 @@ import { ProfilComponent } from './dashbord/profil/profil.component';
     DashbordComponent,
     NavComponent,
     ProfilComponent,
+    MapComponent,
+    HomeComponent,
+    UpdateProfilComponent,
+    CinemaComponent,
+    FtrComponent,
+    AdminComponent,
+    HomeadminComponent,
+    LoginadinComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +62,10 @@ import { ProfilComponent } from './dashbord/profil/profil.component';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    FormsModule
+    FormsModule,
+    AngularFirestoreModule
   ],
-  providers: [FilmService],
+  providers: [FilmService, GetAllService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,7 +31,8 @@ export class RegisterComponent implements OnInit {
     this.fire.auth.createUserWithEmailAndPassword(this.email, this.pwd).then(user => {
       this.items.push(data);
       alert('Your account has ben created');
-      this.root.navigateByUrl('/dashbord');
+      localStorage.setItem('user', this.email)
+      this.root.navigateByUrl('/dashbord/home');
     }).catch(event => {
       alert(event);
     })
