@@ -54,6 +54,7 @@ export class CinemaComponent implements OnInit {
   itemsHeure : AngularFireList<any>;
 
   howaitem : string;
+  howaimg : string;
   howaArray =[];
   itemUser : AngularFireList<any>;
   userArray = [];
@@ -73,7 +74,8 @@ export class CinemaComponent implements OnInit {
         }
         if (y['email'] == localStorage.getItem('admin')){
           this.howaArray.push(y as ListUserClass);
-          this.howaitem = y['name']
+          this.howaitem = y['name'];
+          this.howaimg = y['ImgPath'];
         }
     })
     })
